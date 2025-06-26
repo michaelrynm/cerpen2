@@ -110,59 +110,59 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-100">
       {/* Hero Section */}
       <section
-        className={`relative min-h-screen flex items-center justify-center px-6 transition-all duration-1000 ${
+        className={`relative min-h-screen flex items-center justify-center px-4 sm:px-6 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-amber-200/20 to-amber-300/20"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="mb-8 transform hover:scale-105 transition-transform duration-300">
-            <BookOpen className="mx-auto h-20 w-20 text-amber-600 mb-6 animate-pulse" />
+          <div className="mb-6 sm:mb-8 transform hover:scale-105 transition-transform duration-300">
+            <BookOpen className="mx-auto h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 text-amber-600 mb-4 sm:mb-6 animate-pulse" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-amber-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-amber-900 mb-4 sm:mb-6 leading-tight px-2">
             <span className="bg-gradient-to-r from-amber-800 to-amber-600 bg-clip-text text-transparent">
               Langkah Kecil di Kota Baru
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-amber-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-amber-700 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Sebuah perjalanan menemukan jati diri di tengah perbedaan budaya dan
             tantangan kehidupan perantauan
           </p>
 
-          <div className="flex items-center justify-center gap-4 text-amber-600">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 text-amber-600">
             <Star
-              className="h-6 w-6 fill-current animate-bounce"
+              className="h-4 w-4 sm:h-6 sm:w-6 fill-current animate-bounce"
               style={{ animationDelay: "0ms" }}
             />
             <Star
-              className="h-6 w-6 fill-current animate-bounce"
+              className="h-4 w-4 sm:h-6 sm:w-6 fill-current animate-bounce"
               style={{ animationDelay: "200ms" }}
             />
             <Star
-              className="h-6 w-6 fill-current animate-bounce"
+              className="h-4 w-4 sm:h-6 sm:w-6 fill-current animate-bounce"
               style={{ animationDelay: "400ms" }}
             />
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-amber-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-amber-600 rounded-full mt-2 animate-pulse"></div>
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-amber-600 rounded-full flex justify-center">
+            <div className="w-1 h-2 sm:h-3 bg-amber-600 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
       {/* Story Carousel Section */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-amber-900 mb-3 sm:mb-4 px-2">
               Perjalanan Nina Menemukan Rumah Baru
             </h2>
-            <p className="text-xl text-amber-700 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-amber-700 max-w-2xl mx-auto px-2">
               Ikuti kisah inspiratif tentang adaptasi, persahabatan, dan
               pertumbuhan pribadi
             </p>
@@ -170,31 +170,31 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
 
           <div className="relative">
             {/* Carousel Container */}
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-white/80 backdrop-blur-sm border border-amber-200">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl bg-white/80 backdrop-blur-sm border border-amber-200">
               <div
-                className="flex transition-transform duration-700 ease-in-out"
+                className="flex items-center transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {stories.map((story, index) => (
                   <div key={story.id} className="w-full flex-shrink-0">
-                    <div className="flex flex-col md:flex-row">
-                      {/* Story Content */}
-                      <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                        <div className="space-y-6">
+                    <div className="flex flex-col lg:flex-row items-center min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
+                      {/* Story Content - Takes more space */}
+                      <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center order-2 lg:order-1">
+                        <div className="space-y-4 sm:space-y-6">
                           <p
-                            className="text-lg md:text-xl text-amber-800 leading-relaxed"
+                            className="text-amber-800 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl text-justify"
                             dangerouslySetInnerHTML={{ __html: story.content }}
                           ></p>
                         </div>
                       </div>
 
-                      {/* Story Image */}
-                      <div className="flex-1 relative p-4 flex items-center justify-center">
-                        <div className="aspect-[4/6] w-full">
+                      {/* Story Image - Portrait orientation */}
+                      <div className="flex-1 p-4 sm:p-6 flex items-center justify-center order-1 lg:order-2">
+                        <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-full aspect-[4/5] relative">
                           <img
                             src={story.image}
                             alt={story.title}
-                            className="w-full h-full object-contain rounded-xl"
+                            className="w-full h-full  object-center rounded-lg sm:rounded-xl shadow-lg"
                           />
                         </div>
                       </div>
@@ -207,25 +207,25 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
+              className="absolute left-1 sm:left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
+              className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
             </button>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-8 gap-3">
+            <div className="flex justify-center mt-6 sm:mt-8 gap-2 sm:gap-3 px-4">
               {stories.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
                       ? "bg-amber-600 scale-125"
                       : "bg-amber-300 hover:bg-amber-400"
@@ -238,10 +238,12 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-amber-800 to-amber-900 text-white py-12">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <BookOpen className="mx-auto h-12 w-12 mb-4 opacity-80" />
-          <p className="text-lg opacity-90">Tiorida Hutabarat © 2025</p>
+      <footer className="bg-gradient-to-r from-amber-800 to-amber-900 text-white py-8 sm:py-12">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
+          <BookOpen className="mx-auto h-8 w-8 sm:h-12 sm:w-12 mb-3 sm:mb-4 opacity-80" />
+          <p className="text-base sm:text-lg opacity-90">
+            Tiorida Hutabarat © 2025
+          </p>
         </div>
       </footer>
     </div>
