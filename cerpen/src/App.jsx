@@ -69,8 +69,7 @@ Rara mendengarkan dengan tenang, tidak menyela. Sesekali ia hanya mengangguk ata
     {
       id: 6,
       title: "Petualangan di Hutan Mistis",
-      content: `Keesokan paginya, Nina duduk termenung di dapur kos. Sinar matahari masuk malu-malu dari celah jendela. Ia menggenggam cangkir teh hangat yang tak disentuh sejak tadi.
-Hari-hari berikutnya, Rara mulai mengajak Nina keluar. Mereka ke pasar tradisional, membeli tempe goreng hangat dan cilok pedas yang, walaupun tak sepedas makanan Medan, setidaknya bisa membuat Nina tersenyum. Mereka mampir ke warung soto, dan Rara memperkenalkan Nina pada berbagai istilah Jawa yang terdengar asing tapi lucu.
+      content: `Hari-hari berikutnya, Rara mulai mengajak Nina keluar. Mereka ke pasar tradisional, membeli tempe goreng hangat dan cilok pedas yang, walaupun tak sepedas makanan Medan, setidaknya bisa membuat Nina tersenyum. Mereka mampir ke warung soto, dan Rara memperkenalkan Nina pada berbagai istilah Jawa yang terdengar asing tapi lucu.
 Nina mulai mencoba lagi. Ia ikut kelompok diskusi kecil, meski masih kaku. Ia mulai bertanya di kelas, meski suaranya pelan. Ia mulai menyapa beberapa teman dan bahkan mengoreksi cara bicaranya agar lebih bisa dipahami. Meski belum sepenuhnya merasa cocok, setidaknya ia tidak merasa sendirian.`,
       image: cover5,
     },
