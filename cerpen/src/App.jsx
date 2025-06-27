@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, BookOpen, Star, Heart } from "lucide-react";
 import cover from "./assets/cover.png";
 import cover2 from "./assets/cover2.png";
@@ -10,6 +10,9 @@ import cover6 from "./assets/cover6.png";
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const carouselRef = useRef(null);
 
   const stories = [
     {
@@ -99,6 +102,31 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
     setIsVisible(true);
   }, [stories.length]);
 
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % stories.length);
   };
@@ -155,7 +183,6 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
         </div>
       </section>
 
-      {/* Story Carousel Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -170,32 +197,38 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
 
           <div className="relative">
             {/* Carousel Container */}
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl bg-white/80 backdrop-blur-sm border border-amber-200">
+            <div
+              ref={carouselRef}
+              className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl bg-white/80 backdrop-blur-sm border border-amber-200"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <div
-                className="flex items-center transition-transform duration-700 ease-in-out"
+                className="flex items-stretch transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {stories.map((story, index) => (
                   <div key={story.id} className="w-full flex-shrink-0">
-                    <div className="flex flex-col lg:flex-row items-center min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
-                      {/* Story Content - Takes more space */}
-                      <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-center order-2 lg:order-1">
-                        <div className="space-y-4 sm:space-y-6">
+                    <div className="flex flex-col lg:flex-row items-stretch min-h-[500px] lg:min-h-[600px]">
+                      {/* Story Content - Consistent padding */}
+                      <div className="flex-[2] p-6 lg:ps-20 flex flex-col justify-center order-2 lg:order-1">
+                        <div className="space-y-4">
                           <p
-                            className="text-amber-800 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl text-justify"
+                            className="text-amber-800 leading-relaxed text-sm sm:text-base lg:text-xl text-justify"
                             dangerouslySetInnerHTML={{ __html: story.content }}
                           ></p>
                         </div>
                       </div>
 
-                      {/* Story Image - Portrait orientation */}
-                      <div className="flex-1 p-4 sm:p-6 flex items-center justify-center order-1 lg:order-2">
-                        <div className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-full aspect-[4/5] relative">
-                          <img
-                            src={story.image}
-                            alt={story.title}
-                            className="w-full h-full object-cover object-center rounded-lg sm:rounded-xl shadow-lg"
-                          />
+                      {/* Story Image - Consistent sizing */}
+                      <div className="flex-[1] p-6 lg:p-8 flex items-center justify-center order-1 lg:order-2">
+                        <div className="w-full max-w-[200px] lg:max-w-[280px] aspect-[4/6] relative">
+                          <div
+                            className={`w-full h-full ${story.image} rounded-lg shadow-lg flex items-center justify-center text-white font-bold text-lg`}
+                          >
+                            <img src={story.image} alt="" />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -204,19 +237,19 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
               </div>
             </div>
 
-            {/* Navigation Buttons */}
+            {/* Navigation Buttons - Hidden on mobile */}
             <button
               onClick={prevSlide}
-              className="absolute left-1 sm:left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
+              className="hidden lg:block absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
             >
-              <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+              <ChevronLeft className="h-6 w-6" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
+              className="hidden lg:block absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-amber-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-amber-200"
             >
-              <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+              <ChevronRight className="h-6 w-6" />
             </button>
 
             {/* Dots Indicator */}
@@ -233,6 +266,11 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
                 />
               ))}
             </div>
+          </div>
+
+          {/* Mobile swipe instruction */}
+          <div className="lg:hidden text-center mt-4 text-amber-600 text-sm">
+            <p>Swipe left or right to navigate</p>
           </div>
         </div>
       </section>
