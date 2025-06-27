@@ -194,7 +194,7 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
                           <img
                             src={story.image}
                             alt={story.title}
-                            className="w-full h-full  object-center rounded-lg sm:rounded-xl shadow-lg"
+                            className="w-full h-full object-cover object-center rounded-lg sm:rounded-xl shadow-lg"
                           />
                         </div>
                       </div>
