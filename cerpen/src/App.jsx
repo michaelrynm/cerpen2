@@ -79,15 +79,19 @@ Nina mulai mencoba lagi. Ia ikut kelompok diskusi kecil, meski masih kaku. Ia mu
       content: `Suatu sore, Bu Rini, pemilik kos, memanggil Nina yang sedang membaca di ruang tamu. “Nduk, sini temani Ibu sebentar,” ajaknya sambil menyiapkan teh.
 Nina duduk di samping Bu Rini, menikmati semilir angin yang membelai pelan.
 “Kamu pintar, Nduk. Ibu tahu kamu kuat. Tapi kuat itu bukan berarti harus selalu bisa sendiri,” kata Bu Rini dengan suara lembut. “Tempat baru memang butuh waktu. Tapi kamu akan kuat karena kamu mencoba. dan yang mencoba, selalu lebih maju dari yang hanya diam.”
-<br/>
-Kata-kata itu menghantam pelan tapi dalam. Air mata Nina mengalir, tapi kali ini bukan karena kesedihan. Ia merasa dimengerti, dihargai. Pelan-pelan, luka yang ia rasakan mulai sembuh, digantikan semangat yang perlahan kembali tumbuh.
-Sejak hari itu, Nina menulis jurnal harian. Ia mulai merekam video kecil tentang kesehariannya sebagai mahasiswa perantauan—cerita tentang pasar tradisional, tentang logat yang ia pelajari, tentang makanan yang ia cicipi, bahkan tentang kesepian yang akhirnya mengajarkannya arti keberanian.
-Ia ikut komunitas debat, bukan lagi untuk membuktikan diri, tapi untuk belajar memahami cara pandang orang lain. Ia tidak lagi takut salah, karena kini ia tahu: salah adalah bagian dari tumbuh.
 `,
       image: cover6,
     },
     {
       id: 8,
+      title: "Petualangan di Hutan Mistis",
+      content: `Kata-kata itu menghantam pelan tapi dalam. Air mata Nina mengalir, tapi kali ini bukan karena kesedihan. Ia merasa dimengerti, dihargai. Pelan-pelan, luka yang ia rasakan mulai sembuh, digantikan semangat yang perlahan kembali tumbuh.
+Sejak hari itu, Nina menulis jurnal harian. Ia mulai merekam video kecil tentang kesehariannya sebagai mahasiswa perantauan—cerita tentang pasar tradisional, tentang logat yang ia pelajari, tentang makanan yang ia cicipi, bahkan tentang kesepian yang akhirnya mengajarkannya arti keberanian.
+Ia ikut komunitas debat, bukan lagi untuk membuktikan diri, tapi untuk belajar memahami cara pandang orang lain. Ia tidak lagi takut salah, karena kini ia tahu: salah adalah bagian dari tumbuh.`,
+      image: cover6,
+    },
+    {
+      id: 9,
       title: "Petualangan di Hutan Mistis",
       content: `Nina tidak hanya beradaptasi. Ia mulai menginspirasi. Beberapa mahasiswa baru dari luar daerah mulai mendatanginya, bertanya dan curhat. Ia mendengarkan mereka dengan sabar, seperti dulu Rara mendengarkannya.
 Langkah kecil yang dulu ia buat dengan berat hati kini berubah menjadi langkah penuh percaya diri. Salatiga tak lagi terasa asing. Ia bukan rumah, memang. Tapi kini, Salatiga adalah tempat di mana Nina tumbuh.
