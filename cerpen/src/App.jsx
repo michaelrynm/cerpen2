@@ -29,7 +29,7 @@ function App() {
     {
       id: 2,
       title: "Petualangan di Hutan Mistis",
-      content: `Keesokan hari di kantin kampus, Nina duduk sendiri. Nasi pecel yang disodorkan padanya hanya ia sentuh sedikit. "Manis kali, kok bisa ya sayur dikasih gula begini" (Logat Batak), gumamnya pelan. Rasa asing menjalar dari lidahnya sampai ke hati. Ia mulai jarang keluar kamar, dan hanya menjawab singkat saat Rara, teman sekamarnya di kos, mengajaknya bicara.
+      content: `Keesokan hari di kantin kampus, Nina duduk sendiri. Nasi pecel yang disodorkan padanya hanya ia sentuh sedikit. "Manis kali bah, kok bisa ya sayur dikasih gula begini" (Logat Batak), gumamnya pelan. Rasa asing menjalar dari lidahnya sampai ke hati. Ia mulai jarang keluar kamar, dan hanya menjawab singkat saat Rara, teman sekamarnya di kos, mengajaknya bicara.
  <br/>
       <br/>
       “Lagi capek aja, Ra,” ucap Nina suatu sore, sambil terus menatap layar ponselnya.
