@@ -154,7 +154,7 @@ Semua itu dimulai dari satu langkah kecil, di kota kecil, oleh hati yang memilih
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-amber-900 mb-4 sm:mb-6 leading-tight px-2">
             <span className="bg-gradient-to-r from-amber-800 to-amber-600 bg-clip-text text-transparent">
-              Langkah Kecil di Kota Baru
+              Best of Story
             </span>
           </h1>
 
